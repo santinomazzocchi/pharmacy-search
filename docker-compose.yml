@@ -1,7 +1,8 @@
 version: '3.5'
 services:
   web:
-    image: santebande/pharmacy-search:latest
+    image: santebande/pharmacy-search:0.0.1
+    command: python -u app.py
     ports:
       - "5000:5000"
     environment:
