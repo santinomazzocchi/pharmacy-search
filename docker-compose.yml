@@ -1,12 +1,10 @@
 version: '3.5'
 services:
-  web_dev:
-    build: .
+  web:
+    image: santebande/pharmacy-search:latest
     command: python -u app.py
     ports:
       - "5000:5000"
-    volumes:
-      - .:/code
     environment:
       - ENV=development
       - PORT=5000
@@ -20,7 +18,7 @@ services:
     container_name: "mongodb"
     environment:
       - MONGO_DATA_DIR=/usr/data/db
-      - MONGO_LOG_DIR=/dev/null
+      - MONGO_LOG_DIR=./data/logs
     volumes:
       - ./data/db:/usr/data/db
     ports:
@@ -28,4 +26,4 @@ services:
     command: mongod --smallfiles --logpath=/dev/null # --quiet
 networks:
   default:
-    name: web_dev
+    name: web
