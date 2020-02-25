@@ -20,5 +20,5 @@
     ```
 
 # How to build and run with docker
-1. Compose the application `docker-compose --project-name pharmacy-search -f docker-compose.yml up --build -d --remove-orphans`
+1. Compose the application `docker-compose --project-name pharmacy-search -f docker-compose.yml up --build -d`
 1. Run docker: `docker-compose run web`

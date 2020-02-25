@@ -1,4 +1,3 @@
-import os
 import requests
 
 from jsonrpc import JSONRPCResponseManager, dispatcher
@@ -6,7 +5,7 @@ from pymongo import MongoClient, GEOSPHERE
 from werkzeug.serving import run_simple
 from werkzeug.wrappers import Request, Response
 
-client = MongoClient(os.environ['DB_PORT_27017_TCP_ADDR'], 27017)
+client = MongoClient('mongodb', 27017)
 
 db = client.pharmacies
 db.pharmacy.drop()
